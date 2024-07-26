@@ -26,7 +26,12 @@ mongoose
   });
 
 // setting up cors middleware
-app.use(cors({ credentials: true, origin: ["http://localhost:5173"] }));
+app.use(
+  cors({
+    credentials: true,
+    origin: ["https://e-commerce-front-uops.onrender.com"],
+  })
+);
 
 // middleware for parsing json data
 app.use(express.json());

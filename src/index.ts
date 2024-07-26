@@ -51,8 +51,8 @@ app.use("/api/key", keyRouter);
 const PORT = 8000;
 
 // starting our server
-const server = app.listen(PORT, () => {
+app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
 });
 
-export { app, server };
+export { app };

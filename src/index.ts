@@ -15,16 +15,6 @@ dotenv.config();
 // initialize our app
 const app = express();
 
-//connecting to mongoDb
-mongoose
-  .connect(process.env.DATABASE_URI as string)
-  .then(() => {
-    console.log("connected to database");
-  })
-  .catch(() => {
-    console.log("error while connecting to mongoDB");
-  });
-
 // setting up cors middleware
 app.use(
   cors({
@@ -49,6 +39,16 @@ app.use("/api/seed", seedRouter);
 app.use("/api/key", keyRouter);
 
 const PORT = 8000;
+
+//connecting to mongoDb
+mongoose
+  .connect(process.env.DATABASE_URI as string)
+  .then(() => {
+    console.log("connected to database");
+  })
+  .catch(() => {
+    console.log("error while connecting to mongoDB");
+  });
 
 // starting our server
 app.listen(PORT, () => {

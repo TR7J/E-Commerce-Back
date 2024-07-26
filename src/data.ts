@@ -67,3 +67,10 @@ export const sampleUsers: User[] = [
     isAdmin: false,
   },
 ];
+
+/* "scripts": {
+  "dev": "ts-node-dev --respawn --transpile-only --files src/index.ts",
+  "build": "tsc",
+  "test": "jest",
+  "start": "node build/index.js"
+}, */

@@ -1,6 +1,10 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.sampleProducts = void 0;
+exports.sampleUsers = exports.sampleProducts = void 0;
+const bcryptjs_1 = __importDefault(require("bcryptjs"));
 exports.sampleProducts = [
     {
         name: "Nike Slim shirt",
@@ -51,3 +55,23 @@ exports.sampleProducts = [
         description: "high quality product",
     },
 ];
+exports.sampleUsers = [
+    {
+        name: "Joe",
+        email: "admin@example.com",
+        password: bcryptjs_1.default.hashSync("123456"),
+        isAdmin: true,
+    },
+    {
+        name: "John",
+        email: "user@example.com",
+        password: bcryptjs_1.default.hashSync("123456"),
+        isAdmin: false,
+    },
+];
+/* "scripts": {
+  "dev": "ts-node-dev --respawn --transpile-only --files src/index.ts",
+  "build": "tsc",
+  "test": "jest",
+  "start": "node build/index.js"
+}, */

@@ -8,6 +8,7 @@ import { userRouter } from "./routes/userRouter";
 import { orderRouter } from "./routes/orderRouter";
 import { keyRouter } from "./routes/keyRouter";
 import uploadRouter from "./routes/uploadRouter";
+import { Request, Response } from "express";
 
 // fetching env variables
 dotenv.config();
@@ -39,6 +40,11 @@ app.use("/api/seed", seedRouter);
 app.use("/api/key", keyRouter);
 
 const PORT = 8000;
+
+// get
+app.get("/", (req: Request, res: Response) => {
+  res.status(200).json({ message: "Server is running properly" });
+});
 
 //connecting to mongoDb
 mongoose

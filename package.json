@@ -6,7 +6,7 @@
   "scripts": {
     "build": "rimraf dist && tsc",
     "prestart": "npm run build",
-    "start": "node ./dist/src/index.js",
+    "start": "node  --max-old-space-size=4096 ./dist/src/index.js",
     "predev": "npm run build",
     "dev": "concurrently \"tsc -w\" \"nodemon ./dist/src/server.js\"",
     "test": "jest"
